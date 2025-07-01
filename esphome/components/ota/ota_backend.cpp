@@ -1,9 +1,7 @@
 #include "ota_backend.h"
 
 namespace esphome {
-namespace ota_base {
-
-// The make_ota_backend() implementation is provided by each platform-specific backend
+namespace ota {
 
 #ifdef USE_OTA_STATE_CALLBACK
 OTAGlobalCallback *global_ota_callback{nullptr};  // NOLINT(cppcoreguidelines-avoid-non-const-global-variables)
@@ -18,5 +16,5 @@ OTAGlobalCallback *get_global_ota_callback() {
 void register_ota_platform(OTAComponent *ota_caller) { get_global_ota_callback()->register_ota(ota_caller); }
 #endif
 
-}  // namespace ota_base
+}  // namespace ota
 }  // namespace esphome
